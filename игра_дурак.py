@@ -23,6 +23,12 @@ class Card:
         возвращает: логическое (функция __lt(x < y))
         '''
         return self.rank < other.rank and self.suit == other.suit
+    ''''
+    принцип сравнения __lt__
+    t1 = self.suit, self.rank
+    t2 = other.suit, other.rank
+    return t1 < t2
+    '''
 
 
 
@@ -81,7 +87,8 @@ class Hand(Deck):
 
 deck = Deck() #создал колоду
 deck.shuffle() # перетасовал
-#print('Распечатываю созданную колоду deck:\n', deck) # закоментил, т.к. эта инфа мешает
+print('Распечатываю созданную колоду deck:\n', deck) # закоментил, т.к. эта инфа мешает
+print("Тип переменной ",type(deck))
 
 artem = Hand('Artem') # Создали игрока Artem
 pk = Hand ('PK') # Создали игрока PK
