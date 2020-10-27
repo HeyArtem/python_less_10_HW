@@ -1,9 +1,12 @@
+import pytest
+from игра_дурак import Card
+from игра_дурак import Deck
+
 '''
 Здесь я пишу тесты pytest на игру дурак
 '''
 
-import pytest
-from игра_дурак import Card
+
 
 class Test_fool:
 
@@ -25,7 +28,7 @@ class Test_fool:
         game_fool = Card(2, 3)
         assert game_fool.rank == 3
 
-    def test_3_str(self): #как это сдалать????????????
+    def test_3_str(self):
         ''''
         Тест 3
         Хочется протестировать строковое представление обьекта карты
@@ -34,13 +37,17 @@ class Test_fool:
         assert '8 of Черви ♡'
 
 
-    # def test_4_lt((self, other)): # Не получается написать тест на этот метод, не могу впихнуть в него аргументы
-    #     ''''
-    #     Тест 4
-    #     Тестирую модуль который сравнивает карту с другими,
-    #     сначала по масти, затем по рангу.
-    #     возвращает: логическое (функция __lt(x < y))'''
-    #     game_fool = Card(2, 3 )
+    def test_4__lt__(self): # Не получается написать тест на этот метод, не могу впихнуть в него аргументы
+        ''''
+        Тест 4
+        Тестирую модуль который сравнивает карту с другими,
+        сначала по масти, затем по рангу.
+        возвращает: логическое (функция __lt(x < y))
+        '''
+        game_fool = Card(2, 3 )
+        other_game = Card(2,4)
+        assert game_fool<other_game
+
 
     def test_4_init(self):
         ''''
@@ -48,7 +55,8 @@ class Test_fool:
         Тестирую class Deck:
         конкретно метод __init__
         '''
-        game_fool_Deck = Deck():
+        game_fool_Deck = Deck()
+        assert game_fool_Deck.cards
 
 
 
