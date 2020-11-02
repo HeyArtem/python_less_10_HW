@@ -32,7 +32,6 @@ class Card:
 
 
 
-
 class Deck:
     '''Класс колоды карт'''
 
