@@ -42,6 +42,7 @@ class Test_game_fool(unittest.TestCase):
         game_foll_unitest = Deck()
         self.assertEqual(36, (len(game_foll_unitest.cards)))
 
+
     def test_5_fool_init_shuffle(self):
         '''
         Тест 5
