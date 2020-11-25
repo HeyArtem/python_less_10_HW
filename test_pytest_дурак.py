@@ -1,6 +1,6 @@
 import pytest
-from игра_дурак import Card
-from игра_дурак import Deck
+from game_fool import Card
+from game_fool import Deck
 
 '''
 Здесь я пишу тесты pytest на игру дурак
@@ -42,7 +42,7 @@ class Test_fool:
         Тест 4
         Тестирую модуль который сравнивает карту с другими,
         сначала по масти, затем по рангу.
-        возвращает: логическое (функция __lt(x < y))
+        возвращает: логическое (функция __lt__(x < y))
         '''
         game_fool = Card(2, 3 )
         other_game = Card(2,4)
@@ -57,6 +57,15 @@ class Test_fool:
         '''
         game_fool_Deck = Deck()
         assert game_fool_Deck.cards
+
+    def test_5_deck(self):
+        ''''
+        Тест 5
+        Тестирую количество карт в созданной колоде,
+        их должно быть 36
+        '''
+        deck = Deck() # создал колоду
+        assert len(deck) == 36
 
 
 
