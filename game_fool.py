@@ -1,6 +1,11 @@
-#from __future__ import print_function, division
-import random
 
+
+
+import random
+'''
+ДЗ
+Это игра Дурак на которую я буду писать pytest & unitTest
+'''
 
 class Card:
     '''Класс стандартной игральной колоды'''
