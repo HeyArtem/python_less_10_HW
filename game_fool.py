@@ -1,4 +1,4 @@
-from __future__ import print_function, division
+#from __future__ import print_function, division
 import random
 
 
@@ -20,7 +20,7 @@ class Card:
     def __lt__(self, other):
         '''
         Сравнивает эту карту с другими, сначала по масти, затем по рангу.
-        возвращает: логическое (функция __lt(x < y))
+        возвращает: логическое (функция __lt__(x < y))
         '''
         return self.rank < other.rank and self.suit == other.suit
     ''''
@@ -68,12 +68,16 @@ class Deck:
 
     def sort(self):
         ''' Сортировка карт в порядке возрастания'''
-        self.card.sort()
+        self.cards.sort()
 
     def move_cards(self, hand, num):
         '''Передается num карт игроку hand'''
         for i in range(num):
             hand.add_card(self.pop_card())
+
+    def __len__(self):
+        '''Определяет количество карт'''
+        return len(self.cards)
 
 
 class Hand(Deck):
@@ -83,11 +87,15 @@ class Hand(Deck):
         self.cards = []
         self.label = label
 
+    def __len__(self):
+        '''Определяет количество карт'''
+        return len(self.cards)
+
 
 deck = Deck() #создал колоду
 deck.shuffle() # перетасовал
-print('Распечатываю созданную колоду deck:\n', deck) # закоментил, т.к. эта инфа мешает
-print("Тип переменной ",type(deck))
+#print('Распечатываю созданную колоду deck:\n', deck) # закоментил, т.к. эта инфа мешает
+#print("Тип переменной ",type(deck))
 
 artem = Hand('Artem') # Создали игрока Artem
 pk = Hand ('PK') # Создали игрока PK
