@@ -49,16 +49,16 @@ class Test_game_fool(unittest.TestCase):
         Тестирую метод shuffle
         тасую карты в колоде
         '''
-        game_foll_unitest = Deck()
-        peremen = game_foll_unitest.cards
-        peremen_2 = False
-        game_foll_unitest.shuffle()
-        peremen_3 = game_foll_unitest.cards
 
-        for i, j in zip(peremen, peremen_3):
+        game_foll_unitest = Deck() # создали колоду game_foll_unitest -> колода версия 1
+        cards_before = game_foll_unitest.cards[:] # создали перемннную cards_before которая равна колода версия 1 (сохранение последовательности добиваемя срезом)
+        swich = False # создали переменную Ложь
+        game_foll_unitest.shuffle() # тасуем колоду
+        cards_after = game_foll_unitest.cards # создали пременную которой присвоено перетасованная колоду версии 1, теперь это колода -> Версия 2
+        for i,j in zip(cards_before, cards_after): # сравниваем по позициям колоды Версия 1 и версия 2 если есть расхождения, то переменной sich присваиватся True
             if i != j:
-                peremen_2 = True
-        self.assertEqual(False, peremen_2)
+                swich = True
+            self.assertEqual(True, swich) # Спавниваем два значения True и swich (тоже будет True, если карты перетасованы)
 
 
 
